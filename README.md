@@ -96,7 +96,7 @@ conflicts = [ # so uv will resolve the groups independently
 ]
 
 
-package = true # This makes uv automatically add deepchain_mrna to PYTHONPATH
+package = true 
 
 
 [build-system]
@@ -116,16 +116,21 @@ packages = ["src/subexample"]
 # UV Version
 
 ```
-```
+
 
 uv 0.6.7 (029b9e1fc 2025-03-17)
-
 ```
+
 
 
 # Environment
 ```
-
-```
 Both MacOS and Linux
 ```
+
+# Reproduction 
+In this repository the folder `
+simple-package-working/`
+ reproduces the single package version which works, and the `
+workspace-not-working/`
+ reproduces the one wrapped in a workspace which does not work
