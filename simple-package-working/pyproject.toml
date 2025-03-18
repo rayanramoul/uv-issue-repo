@@ -1,11 +1,3 @@
-# uv-issue-repo
-
-The issue is rather simple, the same dependency lists does work if they are in a single package, but does not if the
-same package is part of a workspace
-
-The corresponding `pyproject.toml`:
-
-```toml
 [project]
 name = "subexample"
 version = "0.1.0"
@@ -13,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
-
 
 [project.optional-dependencies]
 cpu = [
@@ -47,10 +38,8 @@ tpu-torch = [
 ]
 
 
-
 [[tool.uv.index]]
 name = "pytorch-cuda11"
-
 
 url = "https://download.pytorch.org/whl/cu118"
 explicit = true
@@ -68,7 +57,6 @@ torch = [
   { index = "pytorch-cpu", extra = "cpu" },
 ]
 
-
 torchvision = [
   { index = "pytorch-cuda11", extra = "gpu" },
   { index = "pytorch-cpu", extra = "cpu" },
@@ -83,7 +71,6 @@ find-links = [
   "https://storage.googleapis.com/jax-releases/libtpu_releases.html",
   "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html",
   "https://storage.googleapis.com/libtpu-releases/index.html",
-
 ]
 
 conflicts = [ # so uv will resolve the groups independently
@@ -107,25 +94,5 @@ build-backend = "hatchling.build"
 [tool.hatch.metadata]
 allow-direct-references = true
 
-
 [tool.hatch.build.targets.wheel]
 packages = ["src/subexample"]
-
-```
-
-# UV Version
-
-```
-```
-
-uv 0.6.7 (029b9e1fc 2025-03-17)
-
-```
-
-
-# Environment
-```
-
-```
-Both MacOS and Linux
-```

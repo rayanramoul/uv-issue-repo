@@ -1,0 +1,16 @@
+[project]
+name = "example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["subexample"]
+
+[tool.uv.workspace]
+members = ["subexample"]
+
+[tool.uv.sources]
+subexample = { workspace = true }
+
+[tool.uv]
+prerelease = "allow"
