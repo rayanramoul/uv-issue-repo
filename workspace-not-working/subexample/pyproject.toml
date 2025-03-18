@@ -82,7 +82,7 @@ conflicts = [ # so uv will resolve the groups independently
 ]
 
 
-package = true # This makes uv automatically add deepchain_mrna to PYTHONPATH
+package = true 
 
 
 [build-system]
